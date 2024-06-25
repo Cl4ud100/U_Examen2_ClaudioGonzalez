@@ -3657,7 +3657,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 0
-  MaxDistance: 50
+  MaxDistance: 41.922653
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0
