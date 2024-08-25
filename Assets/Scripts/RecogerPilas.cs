@@ -8,7 +8,7 @@ public class RecogerPilas : MonoBehaviour
     public GameObject player;
 
     // Distancia mínima para que el jugador pueda recoger el objeto.
-    public float pickUpRange = 2.0f;
+    public float pickUpRange = 1.0f;
 
     // Identificador del objeto, puede ser útil si estás gestionando un inventario.
     public string pilas;
@@ -34,8 +34,7 @@ public class RecogerPilas : MonoBehaviour
     void PickUp()
     {
         // Aquí se agrega la lógica para añadir el objeto al inventario o simplemente destruir el objeto.
-        Debug.Log("Has recogido: " + pilas "para la linterna");
-
+        Debug.Log("Has recogido: " + pilas);
         // Puedes añadir aquí el objeto al inventario del jugador si tienes un sistema de inventario.
 
         // Destruir el objeto después de recogerlo
