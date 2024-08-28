@@ -4063,7 +4063,6 @@ GameObject:
   - component: {fileID: 187562888}
   - component: {fileID: 187562887}
   - component: {fileID: 187562886}
-  - component: {fileID: 187562890}
   m_Layer: 0
   m_Name: Pilas
   m_TagString: Untagged
@@ -4161,21 +4160,6 @@ Transform:
   - {fileID: 2038251451}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &187562890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187562885}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 442055306d639ad4b94bd674fe8b5aa5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 1339778980958178148, guid: 6c5fac663f89feb4e9209e9691744601, type: 3}
-  pickUpRange: 1
-  pilas: 
 --- !u!1001 &188482680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10660,12 +10644,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 824c00626fc1213408f78e303a5534c7, type: 3}
---- !u!1 &512672450 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1339778980958178148, guid: 6c5fac663f89feb4e9209e9691744601,
-    type: 3}
-  m_PrefabInstance: {fileID: 2140785803}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &515298054
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11858,6 +11836,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BatteryAA
+      objectReference: {fileID: 0}
+    - target: {fileID: 567147022187255751, guid: 8809bf6169090444b94e702fbc61c496,
+        type: 3}
+      propertyPath: m_TagString
+      value: Battery
       objectReference: {fileID: 0}
     - target: {fileID: 1164603166913248891, guid: 8809bf6169090444b94e702fbc61c496,
         type: 3}
@@ -20883,7 +20866,6 @@ GameObject:
   - component: {fileID: 1070970077}
   - component: {fileID: 1070970076}
   - component: {fileID: 1070970075}
-  - component: {fileID: 1070970079}
   m_Layer: 0
   m_Name: Linterna
   m_TagString: Untagged
@@ -20981,21 +20963,6 @@ Transform:
   - {fileID: 735779397}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1070970079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1070970074}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1507bae596cc8847ab3e14749d19353, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 512672450}
-  pickUpRange: 1
-  linterna: 
 --- !u!1001 &1071523232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29683,6 +29650,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Electric Torch HighPoly
       objectReference: {fileID: 0}
+    - target: {fileID: 2695777482564835125, guid: f63e65675a6e1494f940b88d554ba138,
+        type: 3}
+      propertyPath: m_TagString
+      value: lintern
+      objectReference: {fileID: 0}
     - target: {fileID: 3324364588802526607, guid: f63e65675a6e1494f940b88d554ba138,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -37921,6 +37893,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 1339778980958178148, guid: 6c5fac663f89feb4e9209e9691744601,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 3590235302550857601, guid: 6c5fac663f89feb4e9209e9691744601,
         type: 3}
