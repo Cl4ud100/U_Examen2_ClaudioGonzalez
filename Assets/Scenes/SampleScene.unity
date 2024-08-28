@@ -11858,7 +11858,7 @@ PrefabInstance:
     - target: {fileID: 567147022187255751, guid: 8809bf6169090444b94e702fbc61c496,
         type: 3}
       propertyPath: m_TagString
-      value: Battery
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 1164603166913248891, guid: 8809bf6169090444b94e702fbc61c496,
         type: 3}
@@ -29671,7 +29671,12 @@ PrefabInstance:
     - target: {fileID: 2695777482564835125, guid: f63e65675a6e1494f940b88d554ba138,
         type: 3}
       propertyPath: m_TagString
-      value: lintern
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 3001713505705433743, guid: f63e65675a6e1494f940b88d554ba138,
+        type: 3}
+      propertyPath: m_Convex
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3324364588802526607, guid: f63e65675a6e1494f940b88d554ba138,
         type: 3}
