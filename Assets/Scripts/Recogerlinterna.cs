@@ -12,11 +12,6 @@ public class Recogerlinterna : MonoBehaviour
 
     // Identificador del objeto, puede ser útil si estás gestionando un inventario.
     public string linterna;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
