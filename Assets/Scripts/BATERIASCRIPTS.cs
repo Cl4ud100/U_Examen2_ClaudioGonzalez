@@ -34,11 +34,11 @@ public class BATERIASCRIPTS : MonoBehaviour
         {
             case "Battery":
                 batteryFind = true;
-                Debug.Log("Encontraste la bateria");
+                Debug.Log("Encontraste la bateria" + batteryFind);
                 break;
             case "lintern":
                 linternFind = true;
-                Debug.Log("Encontraste la linterna");
+                Debug.Log("Encontraste la linterna" + linternFind);
                 break;
         }
     }
