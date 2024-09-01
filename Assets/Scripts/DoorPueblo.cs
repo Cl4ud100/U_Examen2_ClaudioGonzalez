@@ -36,4 +36,17 @@ public class DoorPueblo : MonoBehaviour
         }
 
     }
+
+    private void OnTriggerExit(Collider other)
+    {
+        switch (other.tag)
+        {
+            case "Door":
+            {
+                animDoor.SetBool("AnimDoor",false);
+                break;
+            }
+            
+        }
+    }
 }
