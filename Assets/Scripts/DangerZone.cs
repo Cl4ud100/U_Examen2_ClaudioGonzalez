@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -14,6 +15,8 @@ public class DangerZone : MonoBehaviour
     [Space] [Header("UI")] 
     [Tooltip("Estas son las UI de vida y daño")]
     [SerializeField] private GameObject dangerzoneUI;
+
+    [SerializeField] private GameObject gameOverUI;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,7 +36,41 @@ public class DangerZone : MonoBehaviour
         switch (other.tag)
         {
             case "Danger":
+            {
+                StartCoroutine(DangerZoneDamage());
+            }
+                break;
                 
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        switch (other.tag)
+        {
+            case "Danger":
+            {
+                dangerzoneUI.SetActive(false);
+                break;
+            }
+        }
+    }
+
+    IEnumerator DangerZoneDamage()
+    {
+        while (health >= 0)
+        {
+            health -= decreaseHealth;
+            dangerzoneUI.SetActive(true);
+            Debug.Log("daño recibido");
+            yield return new WaitForSeconds(0.5f);
+            dangerzoneUI.SetActive(false);
+            yield return new WaitForSeconds(0.5f);
+        }
+        if (health <= 0)
+        {
+            gameOverUI.SetActive(true);
+            Time.timeScale = 0;
         }
     }
 }
