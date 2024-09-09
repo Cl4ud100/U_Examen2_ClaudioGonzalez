@@ -7,7 +7,8 @@ public class DangerZone : MonoBehaviour
     [Header("Danger")]
     [Tooltip("Todo lo referente a daño al jugador")]
     [SerializeField] private GameObject dangerzone;
-    private Collider dangerzonecollider;
+    private Collider _dangerzonecollider;
+    
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
