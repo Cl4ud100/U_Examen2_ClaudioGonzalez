@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -12,10 +13,20 @@ public class DangerZone : MonoBehaviour
     [SerializeField] private int health = 100;
     [SerializeField] private int decreaseHealth = 10;
 
-    [Space] [Header("UI")] 
+    [Space] 
+    
+    [Header("UI")] 
     [Tooltip("Estas son las UI")]
     [SerializeField] private GameObject dangerzoneUI;
     [SerializeField] private GameObject gameOverUI;
+
+    [Space]
+    [Header("Camaras")] 
+    [Tooltip("Variables de la camara")]
+    [SerializeField] private CinemachineVirtualCamera fpCamara;
+    [SerializeField] private CinemachineVirtualCamera secondCamara;
+
+    
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -37,6 +48,7 @@ public class DangerZone : MonoBehaviour
             case "Danger":
             {
                 StartCoroutine(DangerZoneDamage());
+                
             }
                 break;
                 
@@ -49,6 +61,7 @@ public class DangerZone : MonoBehaviour
         {
             case "Danger":
             {
+                //SwitchTofpCamera();
                 dangerzoneUI.SetActive(false);
                 break;
             }
@@ -62,15 +75,29 @@ public class DangerZone : MonoBehaviour
             health -= decreaseHealth;
             dangerzoneUI.SetActive(true);
             Debug.Log("daño recibido");
+            //Invoke("SwitchToNewCamera",100);
             yield return new WaitForSeconds(0.5f);
             dangerzoneUI.SetActive(false);
             yield return new WaitForSeconds(0.5f);
         }
         if (health <= 0)
         {
+            //Invoke("SwitchTofpCamera",20);
             gameOverUI.SetActive(true);
             Time.timeScale = 0;
         }
+    }
+    
+    private void SwitchToNewCamera()
+    {
+        fpCamara.Priority = 0;
+        secondCamara.Priority = 10;
+    }
+
+    private void SwitchTofpCamera()
+    {
+        secondCamara.Priority = 0;
+        fpCamara.Priority = 10;
     }
 }
 
