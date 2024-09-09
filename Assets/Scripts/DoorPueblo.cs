@@ -47,16 +47,17 @@ public class DoorPueblo : MonoBehaviour
             {
                 if (keyDoorVillage)
                 {
-                    openDoor = !openDoor;
+                    openDoor = true;
+                    /*openDoor = !openDoor;*/
                     animDoor.SetBool("AnimDoor",true);
-                    if (openDoor)
+                    /*if (openDoor)
                     {
                         Debug.Log("La puerta esta abierta, Bienvenido a tus pesadillas");
                     }
                     else
                     {
                         Debug.Log("Puerta Cerrada, Busca la llave");
-                    }
+                    }*/
                     
                     
                 }
