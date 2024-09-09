@@ -10,12 +10,11 @@ public class DangerZone : MonoBehaviour
     [SerializeField] private GameObject dangerzone;
     private Collider _dangerzonecollider;
     [SerializeField] private int health = 100;
-    [SerializeField] private int decreaseHealth = 5;
+    [SerializeField] private int decreaseHealth = 10;
 
     [Space] [Header("UI")] 
-    [Tooltip("Estas son las UI de vida y daño")]
+    [Tooltip("Estas son las UI")]
     [SerializeField] private GameObject dangerzoneUI;
-
     [SerializeField] private GameObject gameOverUI;
     
     
