@@ -15,7 +15,7 @@ public class DoorPueblo : MonoBehaviour
     [Header("Key")]
     [Tooltip("Condiciones para la llave")] 
     [SerializeField] private GameObject Key;
-    private bool keyDoorVillage = false;
+    private bool keyDoorVillage;
     private Collider keyCollider;
     [SerializeField] private GameObject keyColliderGameObject;
     
