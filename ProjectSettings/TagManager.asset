@@ -9,6 +9,7 @@ TagManager:
   - lintern
   - Door
   - KeyDoor
+  - Danger
   layers:
   - Default
   - TransparentFX
