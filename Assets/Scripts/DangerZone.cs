@@ -26,6 +26,7 @@ public class DangerZone : MonoBehaviour
     [SerializeField] private CinemachineVirtualCamera fpCamara;
     [SerializeField] private CinemachineVirtualCamera secondCamara;
 
+    private Coroutine dangerZoneCoroutine;
     
     
     
@@ -47,7 +48,10 @@ public class DangerZone : MonoBehaviour
         {
             case "Danger":
             {
-                StartCoroutine(DangerZoneDamage());
+                if (dangerZoneCoroutine == null)
+                {
+                    dangerZoneCoroutine = StartCoroutine(DangerZoneDamage());
+                }
                 
             }
                 break;
@@ -61,7 +65,12 @@ public class DangerZone : MonoBehaviour
         {
             case "Danger":
             {
-                //SwitchTofpCamera();
+                if (dangerZoneCoroutine != null)
+                {
+                    StopCoroutine(dangerZoneCoroutine);
+                    dangerZoneCoroutine = null;
+                }
+
                 dangerzoneUI.SetActive(false);
                 break;
             }
