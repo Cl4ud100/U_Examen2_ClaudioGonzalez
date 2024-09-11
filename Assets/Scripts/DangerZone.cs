@@ -21,10 +21,7 @@ public class DangerZone : MonoBehaviour
     [SerializeField] private GameObject gameOverUI;
 
     [Space]
-    [Header("Camaras")] 
-    [Tooltip("Variables de la camara")]
-    [SerializeField] private CinemachineVirtualCamera fpCamara;
-    [SerializeField] private CinemachineVirtualCamera secondCamara;
+    
 
     private Coroutine dangerZoneCoroutine;
     
@@ -97,16 +94,6 @@ public class DangerZone : MonoBehaviour
         }
     }
     
-    private void SwitchToNewCamera()
-    {
-        fpCamara.Priority = 0;
-        secondCamara.Priority = 10;
-    }
 
-    private void SwitchTofpCamera()
-    {
-        secondCamara.Priority = 0;
-        fpCamara.Priority = 10;
-    }
 }
 
