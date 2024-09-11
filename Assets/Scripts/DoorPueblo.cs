@@ -1,4 +1,5 @@
 using System;
+using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,6 +19,13 @@ public class DoorPueblo : MonoBehaviour
     private bool keyDoorVillage;
     private Collider keyCollider;
     [SerializeField] private GameObject keyColliderGameObject;
+    
+    [Space]
+    
+    [Header("Camaras")] 
+    [Tooltip("Variables de la camara")]
+    [SerializeField] private CinemachineVirtualCamera fpCamara;
+    [SerializeField] private CinemachineVirtualCamera secondCamara;
     
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -48,17 +56,12 @@ public class DoorPueblo : MonoBehaviour
                 if (keyDoorVillage)
                 {
                     openDoor = true;
-                    /*openDoor = !openDoor;*/
+
                     animDoor.SetBool("AnimDoor",true);
-                    /*if (openDoor)
-                    {
-                        Debug.Log("La puerta esta abierta, Bienvenido a tus pesadillas");
-                    }
-                    else
-                    {
-                        Debug.Log("Puerta Cerrada, Busca la llave");
-                    }*/
                     
+                    SwitchToNewCamera();
+
+                    Invoke("SwitchTofpCamera",15 );
                     
                 }
                 else
@@ -79,9 +82,22 @@ public class DoorPueblo : MonoBehaviour
             case "Door":
             {
                 animDoor.SetBool("AnimDoor",false);
+                SwitchTofpCamera();
                 break;
             }
             
         }
+    }
+    
+    private void SwitchToNewCamera()
+    {
+        fpCamara.Priority = 0;
+        secondCamara.Priority = 10;
+    }
+
+    private void SwitchTofpCamera()
+    {
+        secondCamara.Priority = 0;
+        fpCamara.Priority = 10;
     }
 }
