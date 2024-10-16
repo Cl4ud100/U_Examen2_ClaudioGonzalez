@@ -13,6 +13,7 @@ public class GameManage : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
             
         }
         else
@@ -24,7 +25,7 @@ public class GameManage : MonoBehaviour
 
     private void Start()
     {
-        Application.targetFrameRate = 60;
+        //Application.targetFrameRate = 60;
     }
 
     public void decreasedHealth(int amount)
