@@ -25,7 +25,7 @@ public class GameManage : MonoBehaviour
 
     private void Start()
     {
-        //Application.targetFrameRate = 60;
+        Application.targetFrameRate = 60;
     }
 
     public void decreasedHealth(int amount)
@@ -41,7 +41,7 @@ public class GameManage : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game Over, Fin del Juego");
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("GameOver");
         Cursor.lockState = CursorLockMode.None;
 
     }
