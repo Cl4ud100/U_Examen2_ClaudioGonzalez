@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PistasController : MonoBehaviour
@@ -6,7 +7,13 @@ public class PistasController : MonoBehaviour
     [SerializeField] private bool lintern;
     [SerializeField] private bool keydoor;
     [SerializeField] private LinternController _linternController;
-    
+    private Inventario playerInventario;
+
+    private void Start()
+    {
+        playerInventario = GetComponent<Inventario>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         switch (other.tag)
@@ -14,15 +21,24 @@ public class PistasController : MonoBehaviour
             case "Battery":
                 battery = true;
                 Debug.Log("Encontraste la bateria");
+                Items bateria = new Items("Pilas", "activar linterna");
+                playerInventario.AddItem(bateria);
+                Destroy(other.transform.parent.gameObject);
                 _linternController.LinternOnOff();
                 break;
             case "lintern":
                 lintern = true;
                 Debug.Log("Encontraste la linterna");
+                Items linterna = new Items("Linterna", "Puedes ver por su luz");
+                playerInventario.AddItem(linterna);
+                Destroy(other.transform.parent.gameObject);
                 _linternController.LinternOnOff();
                 break;
             case "KeyDoor":
                 keydoor = true;
+                Items llave = new Items("Llave porton", "abriras puertas");
+                playerInventario.AddItem(llave);
+                Destroy(other.transform.parent.gameObject);
                 Debug.Log("Haz encontrado la llave de tus pesadillas");
                 break;
         }
@@ -30,11 +46,14 @@ public class PistasController : MonoBehaviour
 
     public bool ClueslinternFind()
     {
+        bool hasbattery = playerInventario.HasItem("bateria");
+        bool hasLintern = playerInventario.HasItem("Linterna");
         return battery && lintern;
     }
 
     public bool CluesKeydoor()
     {
+        bool haskeydoor = playerInventario.HasItem("Llave");
         return keydoor;
     }
 
