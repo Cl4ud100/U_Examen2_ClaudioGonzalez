@@ -6,8 +6,11 @@ public class PistasController : MonoBehaviour
     [SerializeField] private bool battery;
     [SerializeField] private bool lintern;
     [SerializeField] private bool keydoor;
-    [SerializeField] private LinternController _linternController;
     private Inventario playerInventario;
+    
+    [SerializeField] private Sprite pista1;
+    [SerializeField] private Sprite pista2;
+    [SerializeField] private Sprite llave1;
 
     private void Start()
     {
@@ -21,22 +24,20 @@ public class PistasController : MonoBehaviour
             case "Battery":
                 battery = true;
                 Debug.Log("Encontraste la bateria");
-                Items bateria = new Items("Pilas", "activar linterna");
+                Items bateria = new Items("Pilas", "activar linterna",pista1);
                 playerInventario.AddItem(bateria);
                 Destroy(other.transform.parent.gameObject);
-                _linternController.LinternOnOff();
                 break;
             case "lintern":
                 lintern = true;
                 Debug.Log("Encontraste la linterna");
-                Items linterna = new Items("Linterna", "Puedes ver por su luz");
+                Items linterna = new Items("Linterna", "Puedes ver por su luz",pista2);
                 playerInventario.AddItem(linterna);
                 Destroy(other.transform.parent.gameObject);
-                _linternController.LinternOnOff();
                 break;
             case "KeyDoor":
                 keydoor = true;
-                Items llave = new Items("Llave porton", "abriras puertas");
+                Items llave = new Items("Llave porton", "abriras puertas",llave1);
                 playerInventario.AddItem(llave);
                 Destroy(other.transform.parent.gameObject);
                 Debug.Log("Haz encontrado la llave de tus pesadillas");
@@ -49,6 +50,7 @@ public class PistasController : MonoBehaviour
         bool hasbattery = playerInventario.HasItem("bateria");
         bool hasLintern = playerInventario.HasItem("Linterna");
         return battery && lintern;
+        
     }
 
     public bool CluesKeydoor()
