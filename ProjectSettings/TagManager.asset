@@ -11,6 +11,7 @@ TagManager:
   - KeyDoor
   - Danger
   - GameOver
+  - Pared
   layers:
   - Default
   - TransparentFX
@@ -18,7 +19,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - EnemyAreaWalk
   - 
   - 
   - 
