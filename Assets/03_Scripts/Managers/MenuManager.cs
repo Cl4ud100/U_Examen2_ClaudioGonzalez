@@ -6,6 +6,7 @@ public class MenuManager : MonoBehaviour
     public void ButtonStartGame()
     {
         SceneManager.LoadScene("Game");
+        GameManage.instance.RestartHealth();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
